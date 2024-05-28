@@ -20,13 +20,13 @@ forge build
 forge test
 forge test --match-contract ControlStructures -vvvv
 
-# Adding Deps (GitHub repository)
+# Adding Deps (GitHub repository), skip this step to avoid problems with never versions
 forge install openzeppelin/openzeppelin-contracts
 ```
 
 ## Deployment
 
-Create `.env` file in project root and set `PRIVATE_KEY` of deployer wallet 
+Create `.env` file in project root and set `PRIVATE_KEY` of deployer wallet. See `.env.example` as sample
 
 ```sh
 forge script script/01_BasicMath.s.sol:DeployBasicMath --broadcast --rpc-url base-sepolia
@@ -36,5 +36,3 @@ If you want to verify the code run like this, buy you'll need [BaseScan API key]
 ```sh
 forge script script/01_BasicMath.s.sol:DeployBasicMath --broadcast --verify --rpc-url base-sepolia
 ```
-
-See [`scripts`](./script) for more examples.
