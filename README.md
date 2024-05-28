@@ -20,16 +20,17 @@ forge build
 forge test
 forge test --match-contract ControlStructures -vvvv
 
-# Adding Deps (GitHub repository)
+# Adding Deps (GitHub repository), skip this step to avoid problems with never versions
 forge install openzeppelin/openzeppelin-contracts
 ```
 
 ## Deployment
 
-Set the `MNEMONIC` environment variable when deploying.
+Set the `PRIVATE_KEY` environment variable when deploying.
+
+
+### Run deploy script, you'll find the command inside the .s.sol files in [`scripts`](./script)
 
 ```sh
 forge script script/01_BasicMath.s.sol:DeployBasicMath --broadcast --verify --rpc-url base-goerli
 ```
-
-See [`scripts`](./script) for more examples.
