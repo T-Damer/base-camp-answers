@@ -1,9 +1,8 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-import "forge-std/Test.sol";
-
-import "../src/13_HaikuNFT.sol";
+import "lib/forge-std/src/Test.sol";
+import "src/13_HaikuNFT.sol";
 
 contract HaikuNFTTest is Test {
     event Transfer(address indexed _from, address indexed _to, uint256 indexed _tokenId);

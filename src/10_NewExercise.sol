@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-import "openzeppelin-contracts/contracts/access/Ownable.sol";
+import "lib/openzeppelin-contracts/contracts/access/Ownable.sol";
 
 contract AddressBook is Ownable {
     error ContactNotFound(uint _id);
@@ -17,9 +17,7 @@ contract AddressBook is Ownable {
     uint[] private contactIds;
     uint _currentId;
 
-    constructor(address _initialOwner) {
-        _transferOwnership(_initialOwner);
-    }
+    constructor(address _initialOwner) Ownable(_initialOwner) {}
 
     function addContact(
         string calldata _firstName,

@@ -1,9 +1,8 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-import "forge-std/Test.sol";
-
-import "../src/10_NewExercise.sol";
+import "lib/forge-std/src/Test.sol";
+import "src/10_NewExercise.sol";
 
 contract NewExerciseTest is Test {
     AddressBookFactory public factory;

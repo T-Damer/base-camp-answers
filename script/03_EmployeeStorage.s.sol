@@ -1,17 +1,17 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-import "forge-std/Script.sol";
+import "lib/forge-std/src/Script.sol";
 
-import "../src/03_EmployeeStorage.sol";
+import "src/03_EmployeeStorage.sol";
 
-// ETHERSCAN_API_KEY=noop forge script script/03_EmployeeStorage.s.sol:DeployEmployeeStorage --broadcast --verify --rpc-url base-goerli
+// ETHERSCAN_API_KEY=noop forge script script/03_EmployeeStorage.s.sol:DeployEmployeeStorage --broadcast --rpc-url base-sepolia
 contract DeployEmployeeStorage is Script {
     function setUp() public {}
 
     function run() public {
-        string memory seedPhrase = vm.envString("MNEMONIC");
-        uint256 privateKey = vm.deriveKey(seedPhrase, 0);
+        uint256 privateKey = vm.envUint("PRIVATE_KEY");
+
         vm.startBroadcast(privateKey);
         new EmployeeStorage(
             1000,

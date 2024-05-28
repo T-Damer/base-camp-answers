@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-import "openzeppelin-contracts/contracts/token/ERC20/ERC20.sol";
-import "openzeppelin-contracts/contracts/utils/structs/EnumerableSet.sol";
+import "lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol";
+import "lib/openzeppelin-contracts/contracts/utils/structs/EnumerableSet.sol";
 
 contract WeightedVoting is ERC20 {
     using EnumerableSet for EnumerableSet.AddressSet;

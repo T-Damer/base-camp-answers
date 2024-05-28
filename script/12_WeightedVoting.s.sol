@@ -1,17 +1,17 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-import "forge-std/Script.sol";
+import "lib/forge-std/src/Script.sol";
 
-import "../src/12_WeightedVoting.sol";
+import "src/12_WeightedVoting.sol";
 
-// ETHERSCAN_API_KEY=noop forge script script/12_WeightedVoting.s.sol:DeployWeightedVoting --broadcast --verify --rpc-url base-goerli
+// ETHERSCAN_API_KEY=noop forge script script/12_WeightedVoting.s.sol:DeployWeightedVoting --broadcast --rpc-url base-sepolia
 contract DeployWeightedVoting is Script {
     function setUp() public {}
 
     function run() public {
-        string memory seedPhrase = vm.envString("MNEMONIC");
-        uint256 privateKey = vm.deriveKey(seedPhrase, 0);
+        uint256 privateKey = vm.envUint("PRIVATE_KEY");
+
         vm.startBroadcast(privateKey);
         new WeightedVoting("Test Weighted Voting", "TESTWV");
         vm.stopBroadcast();

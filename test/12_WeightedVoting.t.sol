@@ -1,9 +1,8 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-import "forge-std/Test.sol";
-
-import "../src/12_WeightedVoting.sol";
+import "lib/forge-std/src/Test.sol";
+import "src/12_WeightedVoting.sol";
 
 contract WeightedVotingTest is Test {
     WeightedVoting public token;

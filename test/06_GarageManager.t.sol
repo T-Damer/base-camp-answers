@@ -1,9 +1,8 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-import "forge-std/Test.sol";
-
-import "../src/06_GarageManager.sol";
+import "lib/forge-std/src/Test.sol";
+import "src/06_GarageManager.sol";
 
 contract GarageManagerTest is Test {
     GarageManager public garageManager;
